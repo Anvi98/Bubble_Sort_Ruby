@@ -5,11 +5,13 @@ def bubble_sort(array)
   is_sorted = false
   until is_sorted
     is_sorted = true
-    for i in 1...array.length - 1 ## I used three dots for the range to not count the last element of the array
+    i = 1
+    while i <= array.length - 2 ## I used three dots for the range to not count the last element of the array
       if array[i] > array[i + 1]
         array[i], array[i + 1] = array[i + 1], array[i] # This is my implementation to swap elements
         is_sorted = false
       end
+      i += 1
     end
   end
   array

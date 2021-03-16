@@ -5,16 +5,18 @@ def bubble_sort_by(array)
   is_sorted = false
   until is_sorted
     is_sorted = true
-    for i in 1...array.length - 1 ## I used three dots for the range to not count the last element of the array
+    i = 1
+    while i <= array.length - 2 ## I used three dots for the range to not count the last element of the array
       if yield(array[i], array[i + 1]).positive?
         array[i], array[i + 1] = array[i + 1], array[i] # This is my implementation to swap elements
         is_sorted = false
       end
+      i += 1
     end
   end
   array
 end
 
-bubble_sort_by([5, 1, 67, 35, 10, 2, 100, 20, 45]) do |left, right|
-  left - right
+bubble_sort_by(%w([hi hello hey])) do |left, right|
+  left.length - right.length
 end
