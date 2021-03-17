@@ -18,8 +18,8 @@ def bubble_sort(array)
   array
 end
 
-def swap(i, j, array)
-  array[i], array[j] = array[j], array[i] # This is my implementation to swap elements
+def swap(current, next_e, array)
+  array[current], array[next_e] = array[next_e], array[current] # This is my implementation to swap elements
 end
 
 numbers = [1, 4, 0, -3, 40]

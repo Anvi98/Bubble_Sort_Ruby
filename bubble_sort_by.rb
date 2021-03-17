@@ -7,21 +7,17 @@ def bubble_sort_by(array)
     is_sorted = true
     i = 0
     while i <= array.length - 2 ## I used three dots for the range to not count the last element of the array
-      yield(array[i], array[i + 1]).positive?
-      array[i], array[i + 1] = array[i + 1], array[i] # This is my implementation to swap elements
-      is_sorted = false
+      val = yield(array[i], array[i + 1])
+      if val.positive?
+        array[i], array[i + 1] = array[i + 1], array[i] # This is my implementation to swap elements
+        is_sorted = false
+      end
       i += 1
     end
   end
-  array
+  p array
 end
 
-bubble_sort_by(%w([hi hello hey])) do |left, right|
+bubble_sort_by(%w(hi hello hey JHGFDERTYJKHGFD a)) do |left, right|
   left.length - right.length
 end
-
-
-list = ["Hi", "Hello", "hey"]
-
-sort = bubble_sort_by(list)
-puts sort
